@@ -3,6 +3,7 @@ const Hapi = require('hapi');
 const Inert = require('inert');
 const indexRoute = require('./routes/index');
 const db = require('./db');
+const flattenDeep = require('lodash').flattenDeep;
 
 // Create a server with a host and port
 const server = new Hapi.Server();
@@ -12,7 +13,7 @@ server.connection({
 });
 
 const modules = [Inert, db()];
-const routes = indexRoute();
+const routes = flattenDeep([indexRoute()]);
 
 server.register(modules, err => {
     if (err) throw err;
