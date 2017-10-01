@@ -58,5 +58,5 @@ typings/
 .env
 
 #project-specific
-./dist
+dist/**/**
 yarn.lock
