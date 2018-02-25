@@ -13,7 +13,7 @@ server.connection({
 });
 
 const modules = [Inert, db()];
-const routes = flattenDeep([indexRoute()]);
+const routes = flattenDeep([indexRoute() ]);
 
 server.register(modules, err => {
     if (err) throw err;

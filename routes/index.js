@@ -1,9 +1,18 @@
-const path = require('path');
+const path = require( 'path' );
+const diplomawork = require('./api/DiplomaWork');
 
 module.exports = () => {
-    return {
+    let register = diplomawork;
+
+    let custom = [ {
         method: 'GET',
-        path: '/{param*}',
+        path: '/api',
+        handler: function ( req, res ) {
+            res( 'hello api' );
+        }
+    }, {
+        method: 'GET',
+        path: '/app/{param*}',
         handler: {
             directory: {
                 path: 'dist',
@@ -11,5 +20,7 @@ module.exports = () => {
                 index: true
             }
         }
-    }
+    } ];
+
+    return register.concat(custom);
 }

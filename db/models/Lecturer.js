@@ -1,19 +1,19 @@
 
 module.exports = function (sequelize, DataTypes) {
-    const Sale = sequelize.define('Sale', {
+    const Sale = sequelize.define('Lecturer', {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
         },
-        productId: {
+        title: {
+            type: DataTypes.STRING
+        },
+        faculty: {
             type: DataTypes.INTEGER
         },
-        pcs: {
-            type: DataTypes.INTEGER
-        },
-        totalAmount: {
-            type: DataTypes.DECIMAL(10, 2)
+        specialties: {
+            type: DataTypes.STRING
         }
     });
     
