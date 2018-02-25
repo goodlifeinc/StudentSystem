@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
   entry: {
-    app: path.resolve(__dirname, 'ui/app.js')
+    app: path.resolve(__dirname, 'ui/idnex.js')
   },
   module: {
       rules: [
